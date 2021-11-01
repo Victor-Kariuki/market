@@ -1,0 +1,121 @@
+<nz-carousel nzAutoPlay>
+  <div nz-carousel-content *ngFor="let image of images" class="landing-carousel">
+    <div [ngStyle]="{
+    'background-image': 'url(' + image.url + ')',
+    'background-size': 'cover',
+    'background-position': 'center',
+    'background-repeat': 'no-repeat',
+    'height': '50vh',
+    'max-width': '100%'
+  }">
+      <div class="landing-carousel-content">
+        <div>
+          <h1 class="landing-title">{{ image.text }}</h1>
+          <p class="landing-description">
+            {{ image.description }}
+          </p>
+          <button nz-button nzType="primary" nzSize="large">
+            <i nz-icon nzType="eye"></i>
+            Get Started
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</nz-carousel>
+
+<div nz-row nzJustify="center" nzAlign="top" class="hero"
+[nzGutter]="[{ xs: 8, sm: 16, md: 24, lg: 32 }, { xs: 8, sm: 16, md: 24, lg: 32 }]">
+  <div nz-col nzXs="24" nzSm="24" nzMd="24" nzLg="20" nzXl="20">
+    <h1 style="text-align: center;" class="title">Top Categories</h1>
+    <app-categories-grid [categories]="categories"></app-categories-grid>
+  </div>
+</div>
+
+<div nz-row [nzGutter]="{ xs: 8, sm: 16, md: 24, lg: 32 }" class="is-white-bg hero">
+  <div nz-col nzXs="0" nzSm="0" nzMd="0" nzLg="12" nzXl="14">
+    <img src="/assets/images/postad.jpg" alt="post ad">
+  </div>
+  <div nz-col nzXs="24" nzSm="24" nzMd="24" nzLg="12" nzXl="10">
+    <h1 class="title">Placing ads has never been easier!</h1>
+    <nz-timeline>
+      <nz-timeline-item>
+        <h4 class="heading">Create An Account</h4>
+        <p>
+          First thing you need to do is to create your own account which will allow you to post ads and better
+          communications with our members as well as some very cool features
+        </p>
+      </nz-timeline-item>
+      <nz-timeline-item>
+        <h4 class="heading">Post an Ad</h4>
+        <p>
+          Once you are finished with creating your account it is time to sell goods and/or services you are
+          offering
+          and in order to do that add submit some ads so people can notice you
+        </p>
+      </nz-timeline-item>
+      <nz-timeline-item>
+        <h4 class="heading">Start Earning</h4>
+        <p>
+          Now sit back, relax and wait for the potential buyers to contact you regarding goods and/or services you
+          are offering and start earning money and building contact as easy as that
+        </p>
+      </nz-timeline-item>
+    </nz-timeline>
+  </div>
+</div>
+
+<div nz-row nzJustify="center" nzAlign="middle" class="hero"
+  [nzGutter]="[{ xs: 8, sm: 16, md: 24, lg: 32 }, { xs: 8, sm: 16, md: 24, lg: 32 }]">
+  <div nz-col nzXs="24" nzSm="24" nzMd="24" nzLg="24" nzXl="24">
+    <h1 class="title">Featured Ads</h1>
+    <app-ads-grid [ads]="ads"></app-ads-grid>
+  </div>
+</div>
+
+<div nz-row nzJustify="center" nzAlign="middle">
+  <div nz-col nzXs="12" nzSm="12" nzMd="12" nzLg="12" nzXl="12">
+    <nz-card class="buyer-card">
+      <h1 style="color: #fff;" class="title">I am a buyer</h1>
+      <p class="hidden-phone" style="color: #fff;">
+        Benefit with creating account which will allow you to store favorite ads, participate in auctions, have chat
+        with the seller, review the seller / be reviewed and after a while if you decide to sell something it will be
+        ready for it.
+      </p>
+      <button nz-button nzType="primary" nzSize="large" nzGhost>start now</button>
+    </nz-card>
+  </div>
+  <div nz-col nzXs="12" nzSm="12" nzMd="12" nzLg="12" nzXl="12">
+    <nz-card class="seller-card">
+      <h1 style="color: #fff;" class="title">I am a seller</h1>
+      <p class="hidden-phone" style="color: #fff;">
+        In order to list your product/services and start earning you need to create your account. Account has all the
+        tools you need and multiple payment gateways will make it more convenient for you to purchase subscription /
+        ads
+      </p>
+      <button nz-button nzType="default" nzSize="large" nzGhost>start now</button>
+    </nz-card>
+  </div>
+</div>
+
+<div nz-row nzJustify="center" nzAlign="middle" class="is-white-bg hero">
+  <div nz-col nzXs="24" nzSm="24" nzMd="24" nzLg="12" nzXl="12">
+    <h2 class="title">Receive the best offers</h2>
+    <p>Stay in touch with Kisoko Market and we'll notify you about best ads</p>
+    <form nz-form (ngSubmit)="submitForm()">
+      <nz-form-item>
+        <nz-form-control nzErrorTip="Please input your username!">
+          <nz-input-group nzPrefixIcon="mail">
+            <input nz-input placeholder="Enter your email" [(ngModel)]="email" />
+          </nz-input-group>
+        </nz-form-control>
+      </nz-form-item>
+
+      <nz-form-item>
+        <nz-form-control>
+          <button nz-button nzType="primary">Subscribe</button>
+        </nz-form-control>
+      </nz-form-item>
+    </form>
+  </div>
+</div>
