@@ -1,4 +1,4 @@
-# KisokoMarket
+# Market
 
 > An online platform that connects people in need of a product temporarily with people who have that product, but are not using it.
 
